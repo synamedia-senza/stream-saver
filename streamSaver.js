@@ -60,7 +60,7 @@ function showStreamSaver() {
 function preloadImages() {
   for (let i = 0; i < 10; i++) {
     let img = new Image();
-    img1.src = `digits/${i}.jpg`;
+    img.src = `digits/${i}.jpg`;
   }
 }
 
