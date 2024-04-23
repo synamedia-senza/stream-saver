@@ -1,0 +1,21 @@
+body {
+  width: 1920px;
+  height: 1080px;
+	margin: 0px;
+	background-color: black;
+  overflow: hidden;
+}
+  
+#main {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+	background-color: #333;
+  text-align: center;
+}
+
+#number10, #number1 {
+  margin-top: 200px;
+  width: 400px;
+  height: 680px;
+}
