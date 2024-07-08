@@ -3,26 +3,26 @@ const STREAM_SAVER_SECONDS = 30;
 
 window.addEventListener("load", async () => {
   try {
-    await hs.init();
+    await senza.init();
 
     countdown();
 
-    hs.remotePlayer.addEventListener("ended", () => {
-      hs.lifecycle.moveToForeground();
+    senza.remotePlayer.addEventListener("ended", () => {
+      senza.lifecycle.moveToForeground();
       countdown();
     });
 
-    await hs.remotePlayer.load(STREAM_SAVER_VIDEO);
-    hs.uiReady();
+    await senza.remotePlayer.load(STREAM_SAVER_VIDEO);
+    senza.uiReady();
   } catch (error) {
     console.error(error);
   }
 });
 
 document.addEventListener("keydown", async (event) => {
-  const currentState = await hs.lifecycle.getState();
+  const currentState = await senza.lifecycle.getState();
   if (currentState == "background" || currentState == "inTransitionToBackground") {
-    hs.lifecycle.moveToForeground();
+    senza.lifecycle.moveToForeground();
   }
 	countdown();
   event.preventDefault();
@@ -53,8 +53,8 @@ function showNumber(counter) {
 }
 
 function showStreamSaver() {
-  hs.remotePlayer.currentTime = 0;
-  hs.remotePlayer.play();
+  senza.remotePlayer.currentTime = 0;
+  senza.remotePlayer.play();
 }
 
 function preloadImages() {
