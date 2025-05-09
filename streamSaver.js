@@ -55,6 +55,7 @@ function showNumber(counter) {
 function showStreamSaver() {
   senza.remotePlayer.currentTime = 0;
   senza.remotePlayer.play();
+  senza.lifecycle.moveToBackground();
 }
 
 function preloadImages() {
